@@ -1,6 +1,6 @@
-import numpy as np # type: ignore
+import numpy as np  # type: ignore
 from uuid import uuid4
-from faker import Faker # type: ignore
+from faker import Faker  # type: ignore
 from typing import List
 
 

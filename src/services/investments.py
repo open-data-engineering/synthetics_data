@@ -10,8 +10,7 @@ class PortfolioService:
     def insert_portfolios(count: int):
         """Insere portfólios no banco de dados."""
         try:
-            portfolios_dicts = InvestmentsEvents.generate_portfolios(count)
-            return [Portfolio(**portfolio_dict) for portfolio_dict in portfolios_dicts]
+            return InvestmentsEvents.generate_portfolios(count)
         except Exception as e:
             logger.error(f"Erro ao inserir portfólios: {e}")
             return []

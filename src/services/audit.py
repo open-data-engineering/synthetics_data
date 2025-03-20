@@ -10,9 +10,7 @@ class AuditService:
     def insert_audits(count: int):
         """Insere auditorias no banco de dados e retorna os objetos inseridos"""
         try:
-            audit_dicts = AuditsEvents.generate_audits(count)
-            return [Audit(**audit_dict) for audit_dict in audit_dicts]
+            return AuditsEvents.generate_audits(count)
         except Exception as e:
             logger.error(f"Erro ao inserir auditorias: {e}")
             return []
-

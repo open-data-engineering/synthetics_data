@@ -2,6 +2,7 @@ from google.cloud import bigquery
 from datetime import datetime
 from typing import List, Dict
 
+
 class BigQueryHelper:
     def __init__(self, project_id: str, dataset_id: str, table_id: str):
         """Inicializa o cliente do BigQuery."""
@@ -20,8 +21,7 @@ class BigQueryHelper:
             print(f"✅ Tabela {self.table_ref} já existe.")
         except Exception:
             table_schema = [
-                bigquery.SchemaField(field["name"], field["type"])
-                for field in schema
+                bigquery.SchemaField(field["name"], field["type"]) for field in schema
             ]
 
             table = bigquery.Table(table_ref, schema=table_schema)
@@ -45,9 +45,9 @@ class BigQueryHelper:
             }
             formatted_records.append(formatted_record)
 
-        if errors := self.client.insert_rows_json(
-            self.table_ref, formatted_records
-        ):
+        if errors := self.client.insert_rows_json(self.table_ref, formatted_records):
             print(f"❌ Erros ao inserir dados: {errors}")
         else:
-            print(f"✅ Inseridos {len(formatted_records)} registros na tabela {self.table_ref}.")
+            print(
+                f"✅ Inseridos {len(formatted_records)} registros na tabela {self.table_ref}."
+            )

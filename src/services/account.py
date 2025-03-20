@@ -9,8 +9,7 @@ class AccountService:
     @staticmethod
     def insert_users(count):
         try:
-            users_dicts = AccountEvents.generate_users(count)
-            return [User(**users_dict) for users_dict in users_dicts]
+            return AccountEvents.generate_users(count)
         except Exception as e:
             logger.error(f"Erro ao inserir usuários: {e}")
             return []
@@ -19,8 +18,7 @@ class AccountService:
     def insert_accounts(count):
         """Insere contas no banco de dados."""
         try:
-            account_dicts = AccountEvents.generate_accounts(count)
-            return [Account(**account_dict) for account_dict in account_dicts]
+            return AccountEvents.generate_accounts(count)
         except Exception as e:
             logger.error(f"Erro ao inserir contas: {e}")
             return []
@@ -29,8 +27,7 @@ class AccountService:
     def insert_subaccounts(count):
         """Insere subcontas no banco de dados."""
         try:
-            subaccount_dicts = AccountEvents.generate_subaccounts(count)
-            return [Subaccount(**subaccount_dict) for subaccount_dict in subaccount_dicts]
+            return AccountEvents.generate_subaccounts(count)
         except Exception as e:
             logger.error(f"Erro ao inserir subcontas: {e}")
             return []

@@ -10,8 +10,7 @@ class EntityService:
     def insert_entities(count: int):
         """Insere entidades no banco de dados."""
         try:
-            entities_dicts = EntityEvents.generate_entities(count)
-            return [Entity(**entity_dict) for entity_dict in entities_dicts]
+            return EntityEvents.generate_entities(count)
         except Exception as e:
             logger.error(f"Erro ao inserir entidades: {e}")
             return []

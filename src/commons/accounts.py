@@ -1,6 +1,6 @@
 import random
 from uuid import uuid4
-from faker import Faker # type: ignore
+from faker import Faker  # type: ignore
 from typing import List
 
 fake = Faker("pt_BR")

@@ -13,6 +13,7 @@ logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
+
 class SyntheticDataGenerator:
     def __init__(self):
         self.operations = [
@@ -39,9 +40,9 @@ class SyntheticDataGenerator:
     def generate(self):
         """Executa a inserção de dados continuamente e retorna os dados gerados."""
         all_data = {}
+        logging.info("▶️  Iniciando a geração dos dados sintéticos...")
         try:
             for service, function_name, table_name, count in self.operations:
-                logging.info(f"▶️ Executando {function_name}...")
 
                 function = getattr(service, function_name, None)
 
@@ -49,12 +50,13 @@ class SyntheticDataGenerator:
                     result = function(count)
                     all_data[table_name] = result
 
-                    logging.info(f"✅ {function_name} gerou {len(result)} registros.")
                 else:
-                    logging.error(f"❌ {function_name} não encontrado no {service.__name__}")
+                    logging.error(
+                        f"❌ {function_name} não encontrado no {service.__name__}"
+                    )
 
-            logging.info("✅ Todos os dados foram gerados...\n")
-            return all_data  
+            logging.info("✅ Dados sintéticos gerados com sucesso!")
+            return all_data
 
         except Exception as e:
             logging.error(f"❌ Erro durante o ciclo de inserção: {e}")
