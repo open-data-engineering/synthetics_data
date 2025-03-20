@@ -1,7 +1,12 @@
-.PHONY: v-env
-v-env:
+.PHONY: create-env
+create-env:
 	@echo "Creating virtual environment..."
 	@python3 -m venv venv
+
+.PHONY: activate-env
+activate-env:
+	@echo "Activating virtual environment..."
+	@source venv/bin/activate
 
 .PHONY: install-reqs
 install-reqs:
@@ -15,7 +20,8 @@ tests:
 
 .PHONY: help
 help:
-	@echo "v-env:         --> Create virtual environment"
+	@echo "create-env:         --> Create virtual environment"
+	@echo "activate-env:       --> Activate virtual environment"
 	@echo "install-reqs:  --> Install requirements"
 	@echo "test:          --> Run tests"
 	@echo "help:          --> Show this help message"
