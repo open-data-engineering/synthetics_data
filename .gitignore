@@ -1,0 +1,10 @@
+.idea
+/venv
+/generator/venv
+.env
+*.pyc
+src/__pycache__
+src/commons/__pycache__
+src/models/__pycache__
+src/services/__pycache__
+generator/__pycache__
