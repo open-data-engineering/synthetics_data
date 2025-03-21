@@ -1,5 +1,5 @@
 import logging
-from commons.entities import EntityEvents
+from src.commons.entities import EntityEvents
 
 logger = logging.getLogger(__name__)
 

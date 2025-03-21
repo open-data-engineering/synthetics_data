@@ -1,5 +1,5 @@
 import logging
-from commons.payments import PaymentsEvents
+from src.commons.payments import PaymentsEvents
 
 logger = logging.getLogger(__name__)
 

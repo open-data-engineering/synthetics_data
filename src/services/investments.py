@@ -1,5 +1,5 @@
 import logging
-from commons.investments import InvestmentsEvents
+from src.commons.investments import InvestmentsEvents
 
 logger = logging.getLogger(__name__)
 

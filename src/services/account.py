@@ -1,5 +1,5 @@
 import logging
-from commons.accounts import AccountEvents
+from src.commons.accounts import AccountEvents
 
 logger = logging.getLogger(__name__)
 
