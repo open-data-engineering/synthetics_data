@@ -1,5 +1,5 @@
 import logging
-from src.commons.audits import AuditsEvents
+from commons.audits import AuditsEvents
 
 logger = logging.getLogger(__name__)
 

@@ -1,5 +1,5 @@
 import logging
-from src.commons.insurance import InsuranceEvents
+from commons.insurance import InsuranceEvents
 
 logger = logging.getLogger(__name__)
 

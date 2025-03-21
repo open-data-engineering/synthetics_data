@@ -15,9 +15,6 @@ jobs:
       matrix:
         python-version: ["3.8", "3.9"]
 
-    env:
-      PYTHONPATH: src
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -46,6 +43,10 @@ jobs:
   lint:
     name: Lint and Type Check
     runs-on: ubuntu-latest
+
+    env:
+      PYTHONPATH: src
+
     steps:
       - uses: actions/checkout@v4
 
@@ -63,5 +64,3 @@ jobs:
 
       - name: Run mypy (type check)
         run: mypy src/
-        env:
-          PYTHONPATH: src

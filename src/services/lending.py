@@ -1,5 +1,5 @@
 import logging
-from src.commons.lending import LendingEvents
+from commons.lending import LendingEvents
 
 logger = logging.getLogger(__name__)
 

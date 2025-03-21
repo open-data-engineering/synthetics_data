@@ -1,5 +1,5 @@
 import logging
-from src.commons.compliance import CompliancesEvents
+from commons.compliance import CompliancesEvents
 
 logger = logging.getLogger(__name__)
 
