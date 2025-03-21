@@ -19,7 +19,7 @@ class AccountService:
         returns an empty list if data generation fails.
         """
         try:
-            return AccountEvents.insert_users(count)
+            return AccountEvents.generate_users(count)
         except Exception as e:
             logger.error(f"Erro ao inserir usuários: {e}")
             return []
@@ -32,7 +32,7 @@ class AccountService:
         returns an empty list if data generation fails.
         """
         try:
-            return AccountEvents.insert_accounts(count)
+            return AccountEvents.generate_accounts(count)
         except Exception as e:
             logger.error(f"Erro ao inserir contas: {e}")
             return []
@@ -45,7 +45,7 @@ class AccountService:
         and returns an empty list if data generation fails.
         """
         try:
-            return AccountEvents.insert_subaccounts(count)
+            return AccountEvents.generate_subaccounts(count)
         except Exception as e:
             logger.error(f"Erro ao inserir subcontas: {e}")
             return []
