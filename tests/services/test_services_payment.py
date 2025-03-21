@@ -17,7 +17,7 @@ class TestTransactionService:
         ],
         ids=["few_transactions", "zero_transactions", "many_transactions"],
     )
-    @patch("src.services.payment.PaymentsEvents")
+    @patch("services.payment.PaymentsEvents")
     def test_insert_transactions(self, MockPaymentsEvents, count):
         MockPaymentsEvents.generate_transactions.return_value = [
             {"transaction_id": i} for i in range(count)
@@ -28,7 +28,7 @@ class TestTransactionService:
         assert len(transactions) == count
         MockPaymentsEvents.generate_transactions.assert_called_once_with(count)
 
-    @patch("src.services.payment.PaymentsEvents.generate_transactions")
+    @patch("services.payment.PaymentsEvents.generate_transactions")
     def test_insert_transactions_exception(self, mock_generate_transactions, caplog):
         mock_generate_transactions.side_effect = Exception("Test Exception")
 
@@ -47,7 +47,7 @@ class TestTransactionService:
         ],
         ids=["few_payment_methods", "zero_payment_methods", "many_payment_methods"],
     )
-    @patch("src.services.payment.PaymentsEvents")
+    @patch("services.payment.PaymentsEvents")
     def test_insert_payment_methods(self, MockPaymentsEvents, count):
         MockPaymentsEvents.generate_payment_methods.return_value = [
             {"method_id": i} for i in range(count)
@@ -58,7 +58,7 @@ class TestTransactionService:
         assert len(payment_methods) == count
         MockPaymentsEvents.generate_payment_methods.assert_called_once_with(count)
 
-    @patch("src.services.payment.PaymentsEvents.generate_payment_methods")
+    @patch("services.payment.PaymentsEvents.generate_payment_methods")
     def test_insert_payment_methods_exception(
         self, mock_generate_payment_methods, caplog
     ):
@@ -79,7 +79,7 @@ class TestTransactionService:
         ],
         ids=["few_merchants", "zero_merchants", "many_merchants"],
     )
-    @patch("src.services.payment.PaymentsEvents")
+    @patch("services.payment.PaymentsEvents")
     def test_insert_merchants(self, MockPaymentsEvents, count):
         MockPaymentsEvents.generate_merchants.return_value = [
             {"merchant_id": i} for i in range(count)
@@ -90,7 +90,7 @@ class TestTransactionService:
         assert len(merchants) == count
         MockPaymentsEvents.generate_merchants.assert_called_once_with(count)
 
-    @patch("src.services.payment.PaymentsEvents.generate_merchants")
+    @patch("services.payment.PaymentsEvents.generate_merchants")
     def test_insert_merchants_exception(self, mock_generate_merchants, caplog):
         mock_generate_merchants.side_effect = Exception("Test Exception")
 

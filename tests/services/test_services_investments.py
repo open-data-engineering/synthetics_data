@@ -17,7 +17,7 @@ class TestPortfolioService:
         ],
         ids=["few_portfolios", "zero_portfolios", "many_portfolios"],
     )
-    @patch("src.services.investments.InvestmentsEvents")
+    @patch("services.investments.InvestmentsEvents")
     def test_insert_portfolios(self, MockInvestmentsEvents, count):
         MockInvestmentsEvents.generate_portfolios.return_value = [
             {"portfolio_id": i} for i in range(count)
@@ -28,7 +28,7 @@ class TestPortfolioService:
         assert len(portfolios) == count
         MockInvestmentsEvents.generate_portfolios.assert_called_once_with(count)
 
-    @patch("src.services.investments.InvestmentsEvents.generate_portfolios")
+    @patch("services.investments.InvestmentsEvents.generate_portfolios")
     def test_insert_portfolios_exception(self, mock_generate_portfolios, caplog):
         mock_generate_portfolios.side_effect = Exception("Test Exception")
 

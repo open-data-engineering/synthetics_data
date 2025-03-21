@@ -17,7 +17,7 @@ class TestAccountService:
         ],
         ids=["insert_few_users", "insert_zero_users", "insert_many_users"],
     )
-    @patch("src.services.account.AccountEvents")
+    @patch("services.account.AccountEvents")
     def test_insert_users(self, MockAccountEvents, count):
         MockAccountEvents.insert_users.return_value = [
             {"user_id": i} for i in range(count)
@@ -37,7 +37,7 @@ class TestAccountService:
         ],
         ids=["insert_few_accounts", "insert_zero_accounts", "insert_many_accounts"],
     )
-    @patch("src.services.account.AccountEvents")
+    @patch("services.account.AccountEvents")
     def test_insert_accounts(self, MockAccountEvents, count):
         MockAccountEvents.insert_accounts.return_value = [
             {"account_id": i} for i in range(count)
@@ -61,7 +61,7 @@ class TestAccountService:
             "insert_many_subaccounts",
         ],
     )
-    @patch("src.services.account.AccountEvents")
+    @patch("services.account.AccountEvents")
     def test_insert_subaccounts(self, MockAccountEvents, count):
         MockAccountEvents.insert_subaccounts.return_value = [
             {"subaccount_id": i} for i in range(count)
@@ -81,7 +81,7 @@ class TestAccountService:
         ],
         ids=["users_exception", "accounts_exception", "subaccounts_exception"],
     )
-    @patch("src.services.account.AccountEvents")
+    @patch("services.account.AccountEvents")
     def test_insert_exception(self, MockAccountEvents, method_name, caplog):
         MockAccountEvents.insert_users.side_effect = Exception("Test Exception")
         MockAccountEvents.insert_accounts.side_effect = Exception("Test Exception")

@@ -17,7 +17,7 @@ class TestComplianceService:
         ],
         ids=["few_regulations", "zero_regulations", "many_regulations"],
     )
-    @patch("src.services.compliance.CompliancesEvents")
+    @patch("services.compliance.CompliancesEvents")
     def test_insert_regulations(self, MockCompliancesEvents, count):
         MockCompliancesEvents.generate_regulations.return_value = [
             {"regulation_id": i} for i in range(count)
@@ -28,7 +28,7 @@ class TestComplianceService:
         assert len(regulations) == count
         MockCompliancesEvents.generate_regulations.assert_called_once_with(count)
 
-    @patch("src.services.compliance.CompliancesEvents.generate_regulations")
+    @patch("services.compliance.CompliancesEvents.generate_regulations")
     def test_insert_regulations_exception(self, mock_generate_regulations, caplog):
         mock_generate_regulations.side_effect = Exception("Test Exception")
 
@@ -51,7 +51,7 @@ class TestComplianceService:
             "many_user_verifications",
         ],
     )
-    @patch("src.services.compliance.CompliancesEvents")
+    @patch("services.compliance.CompliancesEvents")
     def test_insert_user_verification(self, MockCompliancesEvents, count):
         MockCompliancesEvents.generate_user_verifications.return_value = [
             {"verification_id": i} for i in range(count)
@@ -62,7 +62,7 @@ class TestComplianceService:
         assert len(user_verifications) == count
         MockCompliancesEvents.generate_user_verifications.assert_called_once_with(count)
 
-    @patch("src.services.compliance.CompliancesEvents.generate_user_verifications")
+    @patch("services.compliance.CompliancesEvents.generate_user_verifications")
     def test_insert_user_verification_exception(
         self, mock_generate_user_verifications, caplog
     ):

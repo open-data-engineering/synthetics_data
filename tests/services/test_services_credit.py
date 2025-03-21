@@ -17,7 +17,7 @@ class TestCreditService:
         ],
         ids=["few_credit_scores", "zero_credit_scores", "many_credit_scores"],
     )
-    @patch("src.services.credit.CreditsEvents")
+    @patch("services.credit.CreditsEvents")
     def test_insert_credit_scores(self, MockCreditsEvents, count):
         MockCreditsEvents.generate_credit_scores.return_value = [
             {"score_id": i} for i in range(count)
@@ -28,7 +28,7 @@ class TestCreditService:
         assert len(credit_scores) == count
         MockCreditsEvents.generate_credit_scores.assert_called_once_with(count)
 
-    @patch("src.services.credit.CreditsEvents.generate_credit_scores")
+    @patch("services.credit.CreditsEvents.generate_credit_scores")
     def test_insert_credit_scores_exception(self, mock_generate_credit_scores, caplog):
         mock_generate_credit_scores.side_effect = Exception("Test Exception")
 
@@ -47,7 +47,7 @@ class TestCreditService:
         ],
         ids=["few_risk_assessments", "zero_risk_assessments", "many_risk_assessments"],
     )
-    @patch("src.services.credit.CreditsEvents")
+    @patch("services.credit.CreditsEvents")
     def test_insert_risk_assessments(self, MockCreditsEvents, count):
         MockCreditsEvents.generate_risk_assessments.return_value = [
             {"assessment_id": i} for i in range(count)
@@ -58,7 +58,7 @@ class TestCreditService:
         assert len(risk_assessments) == count
         MockCreditsEvents.generate_risk_assessments.assert_called_once_with(count)
 
-    @patch("src.services.credit.CreditsEvents.generate_risk_assessments")
+    @patch("services.credit.CreditsEvents.generate_risk_assessments")
     def test_insert_risk_assessments_exception(
         self, mock_generate_risk_assessments, caplog
     ):

@@ -17,7 +17,7 @@ class TestInsuranceService:
         ],
         ids=["few_policies", "zero_policies", "many_policies"],
     )
-    @patch("src.services.insurance.InsuranceEvents")
+    @patch("services.insurance.InsuranceEvents")
     def test_insert_policies(self, MockInsuranceEvents, count):
         MockInsuranceEvents.generate_policies.return_value = [
             {"policy_id": i} for i in range(count)
@@ -28,7 +28,7 @@ class TestInsuranceService:
         assert len(policies) == count
         MockInsuranceEvents.generate_policies.assert_called_once_with(count)
 
-    @patch("src.services.insurance.InsuranceEvents.generate_policies")
+    @patch("services.insurance.InsuranceEvents.generate_policies")
     def test_insert_policies_exception(self, mock_generate_policies, caplog):
         mock_generate_policies.side_effect = Exception("Test Exception")
 
@@ -47,7 +47,7 @@ class TestInsuranceService:
         ],
         ids=["few_claims", "zero_claims", "many_claims"],
     )
-    @patch("src.services.insurance.InsuranceEvents")
+    @patch("services.insurance.InsuranceEvents")
     def test_insert_claims(self, MockInsuranceEvents, count):
         MockInsuranceEvents.generate_claims.return_value = [
             {"claim_id": i} for i in range(count)
@@ -58,7 +58,7 @@ class TestInsuranceService:
         assert len(claims) == count
         MockInsuranceEvents.generate_claims.assert_called_once_with(count)
 
-    @patch("src.services.insurance.InsuranceEvents.generate_claims")
+    @patch("services.insurance.InsuranceEvents.generate_claims")
     def test_insert_claims_exception(self, mock_generate_claims, caplog):
         mock_generate_claims.side_effect = Exception("Test Exception")
 
@@ -77,7 +77,7 @@ class TestInsuranceService:
         ],
         ids=["few_insured_entities", "zero_insured_entities", "many_insured_entities"],
     )
-    @patch("src.services.insurance.InsuranceEvents")
+    @patch("services.insurance.InsuranceEvents")
     def test_insert_insured_entities(self, MockInsuranceEvents, count):
         MockInsuranceEvents.generate_insured_entities.return_value = [
             {"entity_id": i} for i in range(count)
@@ -88,7 +88,7 @@ class TestInsuranceService:
         assert len(insured_entities) == count
         MockInsuranceEvents.generate_insured_entities.assert_called_once_with(count)
 
-    @patch("src.services.insurance.InsuranceEvents.generate_insured_entities")
+    @patch("services.insurance.InsuranceEvents.generate_insured_entities")
     def test_insert_insured_entities_exception(
         self, mock_generate_insured_entities, caplog
     ):

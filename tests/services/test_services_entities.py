@@ -17,7 +17,7 @@ class TestEntityService:
         ],
         ids=["few_entities", "zero_entities", "many_entities"],
     )
-    @patch("src.services.entities.EntityEvents")
+    @patch("services.entities.EntityEvents")
     def test_insert_entities(self, MockEntityEvents, count):
         MockEntityEvents.generate_entities.return_value = [
             {"entity_id": i} for i in range(count)
@@ -28,7 +28,7 @@ class TestEntityService:
         assert len(entities) == count
         MockEntityEvents.generate_entities.assert_called_once_with(count)
 
-    @patch("src.services.entities.EntityEvents.generate_entities")
+    @patch("services.entities.EntityEvents.generate_entities")
     def test_insert_entities_exception(self, mock_generate_entities, caplog):
         mock_generate_entities.side_effect = Exception("Test Exception")
 
