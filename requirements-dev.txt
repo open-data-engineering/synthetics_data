@@ -1,0 +1,6 @@
+# requirements-dev.txt
+mypy
+pydantic[email]
+pytest
+pytest-cov
+pytest-mock
