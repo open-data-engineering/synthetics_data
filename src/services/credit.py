@@ -1,5 +1,5 @@
 import logging
-from src.commons.credit import CreditsEvents
+from commons.credit import CreditsEvents
 
 logger = logging.getLogger(__name__)
 
