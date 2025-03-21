@@ -2,7 +2,7 @@ import pytest
 from unittest.mock import patch
 import logging
 
-from src.services.investments import PortfolioService
+from services.investments import PortfolioService
 
 logger = logging.getLogger(__name__)
 

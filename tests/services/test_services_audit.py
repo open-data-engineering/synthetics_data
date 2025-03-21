@@ -2,7 +2,7 @@ import pytest
 from unittest.mock import patch
 import logging
 
-from src.services.audit import AuditService
+from services.audit import AuditService
 
 logger = logging.getLogger(__name__)
 

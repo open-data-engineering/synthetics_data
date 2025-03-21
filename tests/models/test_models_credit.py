@@ -2,7 +2,7 @@ import pytest
 from pydantic import ValidationError
 from datetime import datetime, timezone
 
-from src.models.credit import CreditScore, RiskAssessment
+from models.credit import CreditScore, RiskAssessment
 
 
 class TestCreditScore:

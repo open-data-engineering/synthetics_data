@@ -2,7 +2,7 @@ import pytest
 from unittest.mock import patch
 import logging
 
-from src.services.compliance import ComplianceService
+from services.compliance import ComplianceService
 
 logger = logging.getLogger(__name__)
 

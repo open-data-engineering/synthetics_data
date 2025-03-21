@@ -1,7 +1,6 @@
 import pytest
 from uuid import UUID
-import numpy as np
-from src.commons.audits import AuditsEvents
+from commons.audits import AuditsEvents
 from faker import Faker
 
 fake = Faker("pt_BR")

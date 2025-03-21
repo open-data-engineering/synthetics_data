@@ -2,7 +2,7 @@ import pytest
 from unittest.mock import patch
 import logging
 
-from src.services.entities import EntityService
+from services.entities import EntityService
 
 logger = logging.getLogger(__name__)
 

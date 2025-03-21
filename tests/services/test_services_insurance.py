@@ -2,7 +2,7 @@ import pytest
 from unittest.mock import patch
 import logging
 
-from src.services.insurance import InsuranceService
+from services.insurance import InsuranceService
 
 logger = logging.getLogger(__name__)
 

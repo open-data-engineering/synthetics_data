@@ -2,7 +2,7 @@ import pytest
 from unittest.mock import patch
 import logging
 
-from src.services.lending import LoanService
+from services.lending import LoanService
 
 logger = logging.getLogger(__name__)
 

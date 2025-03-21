@@ -1,11 +1,8 @@
 from datetime import date, datetime
 import pytest
-import numpy as np
-from uuid import uuid4
 from faker import Faker
-from typing import List
 
-from src.commons.insurance import InsuranceEvents
+from commons.insurance import InsuranceEvents
 
 fake = Faker("pt_BR")
 

@@ -2,7 +2,7 @@ import pytest
 from pydantic import ValidationError
 from datetime import datetime, timezone
 
-from src.models.audit import Audit
+from models.audit import Audit
 
 
 class TestAudit:

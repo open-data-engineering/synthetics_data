@@ -1,6 +1,6 @@
 import pytest
 from uuid import UUID
-from src.commons.entities import EntityEvents
+from commons.entities import EntityEvents
 from faker import Faker
 
 fake = Faker("pt_BR")

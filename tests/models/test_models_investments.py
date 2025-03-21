@@ -2,7 +2,7 @@ import pytest
 from pydantic import ValidationError
 from datetime import datetime, timezone
 
-from src.models.investments import Portfolio
+from models.investments import Portfolio
 
 
 class TestPortfolio:

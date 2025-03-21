@@ -1,7 +1,6 @@
 import pytest
 from uuid import UUID
-import numpy as np
-from src.commons.credit import CreditsEvents
+from commons.credit import CreditsEvents
 from faker import Faker
 
 fake = Faker("pt_BR")

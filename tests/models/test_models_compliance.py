@@ -2,7 +2,7 @@ import pytest
 from pydantic import ValidationError, StrictStr
 from datetime import datetime, timezone
 
-from src.models.compliance import Regulation
+from models.compliance import Regulation
 
 
 class TestRegulation:

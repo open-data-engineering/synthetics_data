@@ -1,7 +1,6 @@
 import pytest
 from uuid import UUID
-import random
-from src.commons.compliance import CompliancesEvents
+from commons.compliance import CompliancesEvents
 from faker import Faker
 
 fake = Faker("pt_BR")

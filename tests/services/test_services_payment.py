@@ -2,7 +2,7 @@ import pytest
 from unittest.mock import patch
 import logging
 
-from src.services.payment import TransactionService
+from services.payment import TransactionService
 
 logger = logging.getLogger(__name__)
 

@@ -1,17 +1,16 @@
 import pytest
-import logging
 from unittest.mock import patch, MagicMock
 
 from generator.core import SyntheticDataGenerator
-from src.services.account import AccountService
-from src.services.audit import AuditService
-from src.services.compliance import ComplianceService
-from src.services.credit import CreditService
-from src.services.entities import EntityService
-from src.services.insurance import InsuranceService
-from src.services.investments import PortfolioService
-from src.services.lending import LoanService
-from src.services.payment import TransactionService
+from services.account import AccountService
+from services.audit import AuditService
+from services.compliance import ComplianceService
+from services.credit import CreditService
+from services.entities import EntityService
+from services.insurance import InsuranceService
+from services.investments import PortfolioService
+from services.lending import LoanService
+from services.payment import TransactionService
 
 
 @pytest.mark.parametrize(

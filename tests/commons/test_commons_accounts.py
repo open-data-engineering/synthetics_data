@@ -1,6 +1,6 @@
 import pytest
 from uuid import UUID
-from src.commons.accounts import AccountEvents
+from commons.accounts import AccountEvents
 from faker import Faker
 
 fake = Faker("pt_BR")

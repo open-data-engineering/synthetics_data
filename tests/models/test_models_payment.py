@@ -2,7 +2,7 @@ import pytest
 from pydantic import ValidationError
 from datetime import datetime, timezone
 
-from src.models.payment import Transaction, PaymentMethod, Merchant
+from models.payment import Transaction, PaymentMethod, Merchant
 
 
 class TestTransaction:

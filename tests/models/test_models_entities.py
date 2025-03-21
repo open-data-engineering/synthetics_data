@@ -2,7 +2,7 @@ import pytest
 from pydantic import ValidationError
 from datetime import datetime, timezone
 
-from src.models.entities import Entity
+from models.entities import Entity
 
 
 class TestEntity:

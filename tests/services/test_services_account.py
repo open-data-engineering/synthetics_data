@@ -2,7 +2,7 @@ import pytest
 from unittest.mock import patch
 import logging
 
-from src.services.account import AccountService
+from services.account import AccountService
 
 logger = logging.getLogger(__name__)
 

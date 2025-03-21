@@ -1,8 +1,10 @@
 .idea
+/.vscode
 /venv
 /generator/venv
 .env
 *.pyc
+/.pytest_cache
 src/__pycache__
 src/commons/__pycache__
 src/models/__pycache__

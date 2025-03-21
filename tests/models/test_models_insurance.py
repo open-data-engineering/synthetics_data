@@ -2,7 +2,7 @@ import pytest
 from pydantic import ValidationError
 from datetime import datetime, timezone
 
-from src.models.insurance import Policy, Claim, InsuredEntity
+from models.insurance import Policy, Claim, InsuredEntity
 
 
 class TestPolicy:
