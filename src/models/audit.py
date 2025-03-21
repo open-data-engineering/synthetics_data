@@ -1,11 +1,17 @@
-from pydantic import BaseModel  # type: ignore
+from pydantic import BaseModel, StrictStr  # type: ignore
 from datetime import datetime
 
 
 class Audit(BaseModel):
-    audit_id: str
-    entity_id: str
-    status: str
-    findings: str
+    """Represents an audit record.
+
+    This model defines the attributes of an audit, including audit ID, entity ID,
+    status, findings, audit date, and creation timestamp.
+    """
+
+    audit_id: StrictStr
+    entity_id: StrictStr
+    status: StrictStr
+    findings: StrictStr
     date: datetime
     created_at: datetime

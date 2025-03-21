@@ -7,9 +7,17 @@ fake = Faker("pt_BR")
 
 
 class AuditsEvents:
+    """Generates synthetic audit data.
+
+    This class provides methods for generating lists of audit dictionaries.
+    """
+
     @staticmethod
     def generate_audits(count: int) -> List[dict]:
-        """Gera auditorias como dicionários."""
+        """Generates a list of audit dictionaries.
+
+        Each dictionary represents an audit with details like ID, entity ID, status, findings, and timestamps.
+        """
         return [
             {
                 "audit_id": str(uuid4()),

@@ -15,7 +15,14 @@ logging.basicConfig(
 
 
 class SyntheticDataGenerator:
+    """Generates synthetic data for various services.
+
+    This class orchestrates the generation of synthetic data for different services
+    by calling their respective insertion functions.
+    """
+
     def __init__(self):
+        """Initializes the SyntheticDataGenerator with a list of operations."""
         self.operations = [
             (AccountService, "insert_users", "users", 20000),
             (AccountService, "insert_accounts", "accounts", 20000),
@@ -37,19 +44,26 @@ class SyntheticDataGenerator:
             (TransactionService, "insert_merchants", "merchants", 20000),
         ]
 
-    def generate(self):
-        """Executa a inserção de dados continuamente e retorna os dados gerados."""
+    def generate(self, override_counts: dict = None):
+        """Generates synthetic data for all services.
+
+        This method iterates through the defined operations, retrieves the corresponding
+        service function, and executes it to generate synthetic data. The generated data
+        is stored in a dictionary where keys are table names and values are the data.
+        """
         all_data = {}
         logging.info("▶️  Iniciando a geração dos dados sintéticos...")
         try:
             for service, function_name, table_name, count in self.operations:
+                effective_count = (
+                    override_counts.get(table_name, count) if override_counts else count
+                )
 
                 function = getattr(service, function_name, None)
 
                 if function and callable(function):
-                    result = function(count)
+                    result = function(effective_count)
                     all_data[table_name] = result
-
                 else:
                     logging.error(
                         f"❌ {function_name} não encontrado no {service.__name__}"

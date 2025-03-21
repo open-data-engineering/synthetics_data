@@ -8,11 +8,22 @@ fake = Faker("pt_BR")
 
 
 class InvestmentsEvents:
-    """Gera dados sintéticos para portfólios de investimento."""
+    """Generates synthetic data for investment portfolios.
+
+    This class provides methods for generating synthetic data related to investment portfolios,
+    including transactions and portfolio details. The data is generated using the Faker library
+    and includes realistic attributes.
+    """
 
     @staticmethod
     def generate_portfolios(count: int) -> List[dict]:
-        """Gera portfólios como dicionários."""
+        """Generates investment portfolios as dictionaries.
+
+        This method generates a list of dictionaries, where each dictionary represents
+        an investment portfolio with attributes like portfolio ID, user ID, total value,
+        risk profile, and creation timestamp. The data is generated using the Faker library
+        and includes realistic attributes.
+        """
         return [
             {
                 "portfolio_id": str(uuid4()),
@@ -27,10 +38,13 @@ class InvestmentsEvents:
         ]
 
     @staticmethod
-    def generate_transaction(count: object) -> List[dict]:
-        """Gera transações como dicionários.
+    def generate_transaction(count: int) -> List[dict]:
+        """Generates investment transactions as dictionaries.
 
-        Cria um dicionário de transações, com informações como ID, ID da carteira, ID do ativo, quantidade, preço e timestamp.
+        This method generates a list of dictionaries, where each dictionary represents
+        an investment transaction with attributes like transaction ID, portfolio ID,
+        asset ID, amount, price, timestamp, and creation timestamp. The data is generated
+        using the Faker library and includes realistic attributes.
         """
         return [
             {
@@ -46,10 +60,13 @@ class InvestmentsEvents:
         ]
 
     @staticmethod
-    def generate_portfolio(count: object) -> List[dict]:
-        """Gera carteiras como dicionários.
+    def generate_portfolio(count: int) -> List[dict]:
+        """Generates investment portfolios as dictionaries.
 
-        Cria um dicionário de carteiras, com informações como ID, ID do usuário, valor total e perfil de risco.
+        This method generates a list of dictionaries, where each dictionary represents
+        an investment portfolio with attributes like portfolio ID, user ID, total value,
+        risk profile, and creation timestamp.  The data is generated using the Faker library
+        and includes realistic attributes.
         """
         return [
             {

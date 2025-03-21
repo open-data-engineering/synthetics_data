@@ -1,14 +1,23 @@
 import logging
-from src.models.lending import Loan, Payment
 from src.commons.lending import LendingEvents
 
 logger = logging.getLogger(__name__)
 
 
 class LoanService:
+    """Provides services for managing loan data.
+
+    This class offers methods for inserting loan and payment records,
+    handling potential errors during data generation.
+    """
+
     @staticmethod
-    def insert_loans(count: int):
-        """Insere empréstimos no banco de dados."""
+    def insert_loans(count: int) -> list:
+        """Inserts loan data.
+
+        Generates and returns a list of loan data dictionaries. Logs an error and
+        returns an empty list if data generation fails.
+        """
         try:
             return LendingEvents.generate_loans(count)
         except Exception as e:
@@ -16,8 +25,12 @@ class LoanService:
             return []
 
     @staticmethod
-    def insert_payments(count: int):
-        """Insere pagamentos no banco de dados."""
+    def insert_payments(count: int) -> list:
+        """Inserts payment data.
+
+        Generates and returns a list of payment data dictionaries. Logs an error and
+        returns an empty list if data generation fails.
+        """
         try:
             return LendingEvents.generate_payments(count)
         except Exception as e:

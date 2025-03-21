@@ -16,12 +16,12 @@ install-reqs:
 .PHONY: tests
 tests:
 	@echo "Running tests..."
-	@python3 -m pytest tests
+	@python3 -m pytest tests -v
 
 .PHONY: help
 help:
 	@echo "create-env:         --> Create virtual environment"
 	@echo "activate-env:       --> Activate virtual environment"
 	@echo "install-reqs:  --> Install requirements"
-	@echo "test:          --> Run tests"
+	@echo "tests:          --> Run tests"
 	@echo "help:          --> Show this help message"
