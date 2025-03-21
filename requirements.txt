@@ -5,3 +5,4 @@ pytest
 faker
 pydantic
 pytest-mock
+pydantic[email]
