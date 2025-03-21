@@ -5,3 +5,5 @@ pytest
 faker
 pydantic
 pytest-mock
+pydantic[email]
+google-cloud-bigquery

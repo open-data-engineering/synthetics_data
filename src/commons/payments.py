@@ -1,17 +1,28 @@
-import numpy as np  # type: ignore
+import numpy as np
 from uuid import uuid4
-from faker import Faker  # type: ignore
-from typing import List
+from faker import Faker
+from typing import Any, Dict, List
 
 fake = Faker("pt_BR")
 
 
 class PaymentsEvents:
-    """Gera dados sintéticos para transações financeiras."""
+    """Generates synthetic data for financial transactions.
+
+    This class provides methods for generating synthetic data related to payments,
+    including transactions, payment methods, and merchants. The data is generated
+    using the Faker library and includes realistic attributes.
+    """
 
     @staticmethod
-    def generate_transactions(count: int) -> List[dict]:
-        """Gera transações como dicionários."""
+    def generate_transactions(count: int) -> List[Dict[str, Any]]:
+        """Generates payment transactions as dictionaries.
+
+        This method generates a list of dictionaries, where each dictionary represents
+        a payment transaction with attributes like transaction ID, amount, currency,
+        status, timestamp, sender ID, receiver ID, and creation timestamp. The data
+        is generated using the Faker library and includes realistic attributes.
+        """
         return [
             {
                 "transaction_id": str(uuid4()),
@@ -27,8 +38,14 @@ class PaymentsEvents:
         ]
 
     @staticmethod
-    def generate_payment_methods(count: int) -> List[dict]:
-        """Gera métodos de pagamento como dicionários."""
+    def generate_payment_methods(count: int) -> List[Dict[str, Any]]:
+        """Generates payment method data as dictionaries.
+
+        This method generates a list of dictionaries, where each dictionary represents
+        a payment method with attributes like method ID, type, details, user ID,
+        and creation timestamp. The data is generated using the Faker library and
+        includes realistic attributes.
+        """
         return [
             {
                 "method_id": str(uuid4()),
@@ -43,8 +60,14 @@ class PaymentsEvents:
         ]
 
     @staticmethod
-    def generate_merchants(count: int) -> List[dict]:
-        """Gera comerciantes como dicionários."""
+    def generate_merchants(count: int) -> List[Dict[str, Any]]:
+        """Generates merchant data as dictionaries.
+
+        This method generates a list of dictionaries, where each dictionary represents
+        a merchant with attributes like merchant ID, name, category, contact information,
+        and creation timestamp. The data is generated using the Faker library and
+        includes realistic attributes.
+        """
         return [
             {
                 "merchant_id": str(uuid4()),

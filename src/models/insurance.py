@@ -1,30 +1,48 @@
-from pydantic import BaseModel  # type: ignore
+from pydantic import BaseModel, StrictStr, StrictInt
 from datetime import datetime
 
 
 class Policy(BaseModel):
-    policy_id: str
-    type: str
+    """Represents an insurance policy.
+
+    This model defines the attributes of an insurance policy, including policy ID, type,
+    coverage amount, premium, start and end dates, user ID, and creation timestamp.
+    """
+
+    policy_id: StrictStr
+    type: StrictStr
     coverage_amount: int
-    premium: int
+    premium: StrictInt
     start_date: datetime
     end_date: datetime
-    user_id: str
+    user_id: StrictStr
     created_at: datetime
 
 
 class Claim(BaseModel):
-    claim_id: str
-    policy_id: str
-    amount_claimed: int
-    status: str
+    """Represents an insurance claim.
+
+    This model defines the attributes of an insurance claim, including claim ID,
+    policy ID, amount claimed, status, filed date, and creation timestamp.
+    """
+
+    claim_id: StrictStr
+    policy_id: StrictStr
+    amount_claimed: StrictInt
+    status: StrictStr
     filed_date: datetime
     created_at: datetime
 
 
 class InsuredEntity(BaseModel):
-    entity_id: str
-    type: str
-    description: str
-    value: int
+    """Represents an insured entity.
+
+    This model defines the attributes of an insured entity, including entity ID,
+    type, description, value, and creation timestamp.
+    """
+
+    entity_id: StrictStr
+    type: StrictStr
+    description: StrictStr
+    value: StrictInt
     created_at: datetime

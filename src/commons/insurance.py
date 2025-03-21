@@ -1,16 +1,21 @@
-import numpy as np  # type: ignore
+import numpy as np
 from uuid import uuid4
-from faker import Faker  # type: ignore
-from typing import List
+from faker import Faker
+from typing import Any, Dict, List
 
 fake = Faker("pt_BR")
 
 
 class InsuranceEvents:
-    """Gera dados sintéticos para apólices de seguro, reivindicações e entidades seguradas."""
+    """Generates synthetic data for insurance policies, claims, and insured entities.
+
+    This class provides methods for generating synthetic data related to insurance,
+    including policies, claims, and insured entities.  The data is generated
+    using the Faker library and includes realistic attributes.
+    """
 
     @staticmethod
-    def generate_policies(count: int) -> List[dict]:
+    def generate_policies(count: int) -> List[Dict[str, Any]]:
         """Gera apólices de seguro como dicionários."""
         return [
             {
@@ -27,8 +32,14 @@ class InsuranceEvents:
         ]
 
     @staticmethod
-    def generate_claims(count: int) -> List[dict]:
-        """Gera reivindicações de seguro como dicionários."""
+    def generate_claims(count: int) -> List[Dict[str, Any]]:
+        """Generates insurance claims as dictionaries.
+
+        This method generates a list of dictionaries, where each dictionary
+        represents an insurance claim with attributes like claim ID, policy ID,
+        amount claimed, status, filed date, and creation timestamp. The data is
+        generated using the Faker library and includes realistic attributes.
+        """
         return [
             {
                 "claim_id": str(uuid4()),
@@ -42,8 +53,14 @@ class InsuranceEvents:
         ]
 
     @staticmethod
-    def generate_insured_entities(count: int) -> List[dict]:
-        """Gera entidades seguradas como dicionários."""
+    def generate_insured_entities(count: int) -> List[Dict[str, Any]]:
+        """Generates insured entities as dictionaries.
+
+        This method generates a list of dictionaries, where each dictionary
+        represents an insured entity with attributes like entity ID, type,
+        description, value, and creation timestamp. The data is generated
+        using the Faker library and includes realistic attributes.
+        """
         return [
             {
                 "entity_id": str(uuid4()),

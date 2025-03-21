@@ -1,17 +1,23 @@
-import numpy as np  # type: ignore
+import numpy as np
 from uuid import uuid4
-from faker import Faker  # type: ignore
-from typing import List
+from faker import Faker
+from typing import Any, Dict, List
 
 fake = Faker("pt_BR")
 
 
 class CreditsEvents:
-    """Gera dados sintéticos para pontuações de crédito e avaliações de risco."""
+    """Generates synthetic data for credit-related events.
+
+    This class provides methods for generating lists of dictionaries representing credit scores and risk assessments.
+    """
 
     @staticmethod
-    def generate_credit_scores(count: int) -> List[dict]:
-        """Gera pontuações de crédito como dicionários."""
+    def generate_credit_scores(count: int) -> List[Dict[str, Any]]:
+        """Generates a list of credit score dictionaries.
+
+        Each dictionary represents a credit score with details like ID, user ID, score, and timestamps.
+        """
         return [
             {
                 "score_id": str(uuid4()),
@@ -24,8 +30,11 @@ class CreditsEvents:
         ]
 
     @staticmethod
-    def generate_risk_assessments(count: int) -> List[dict]:
-        """Gera avaliações de risco como dicionários."""
+    def generate_risk_assessments(count: int) -> List[Dict[str, Any]]:
+        """Generates a list of risk assessment dictionaries.
+
+        Each dictionary represents a risk assessment with details like ID, user ID, risk level, details, and timestamps.
+        """
         return [
             {
                 "assessment_id": str(uuid4()),

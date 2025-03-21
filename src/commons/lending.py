@@ -1,16 +1,29 @@
-import numpy as np  # type: ignore
+import numpy as np
 from uuid import uuid4
-from faker import Faker  # type: ignore
-from typing import List
+from faker import Faker
+from typing import Any, Dict, List
 
 
 fake = Faker("pt_BR")
 
 
 class LendingEvents:
+    """Generates synthetic data for lending events.
+
+    This class provides methods for generating synthetic data related to lending,
+    including loans, payments, credit scores, and risk assessments. The data is
+    generated using the Faker library and includes realistic attributes.
+    """
+
     @staticmethod
-    def generate_loans(count: int) -> List[dict]:
-        """Gera empréstimos como dicionários."""
+    def generate_loans(count: int) -> List[Dict[str, Any]]:
+        """Generates loan data as dictionaries.
+
+        This method generates a list of dictionaries, where each dictionary represents
+        a loan with attributes like loan ID, user ID, amount, interest rate, term, and
+        creation timestamp. The data is generated using the Faker library and includes
+        realistic attributes.
+        """
         return [
             {
                 "loan_id": str(uuid4()),
@@ -24,8 +37,14 @@ class LendingEvents:
         ]
 
     @staticmethod
-    def generate_payments(count: int) -> List[dict]:
-        """Gera pagamentos de empréstimos como dicionários."""
+    def generate_payments(count: int) -> List[Dict[str, Any]]:
+        """Generates loan payment data as dictionaries.
+
+        This method generates a list of dictionaries, where each dictionary represents
+        a loan payment with attributes like payment ID, loan ID, amount, payment date,
+        status, and creation timestamp. The data is generated using the Faker library
+        and includes realistic attributes.
+        """
         return [
             {
                 "payment_id": str(uuid4()),
@@ -39,10 +58,13 @@ class LendingEvents:
         ]
 
     @staticmethod
-    def generate_credit_score(count: object) -> List[dict]:
-        """Gera pontuações de crédito como dicionários.
+    def generate_credit_score(count: int) -> List[Dict[str, Any]]:
+        """Generates credit score data as dictionaries.
 
-        Cria um dicionário de pontuações de crédito, com informações como ID, ID do usuário, pontuação e data da última atualização.
+        This method generates a list of dictionaries, where each dictionary represents
+        a credit score with attributes like score ID, user ID, score, last updated date,
+        and creation timestamp. The data is generated using the Faker library and
+        includes realistic attributes.
         """
         return [
             {
@@ -56,10 +78,13 @@ class LendingEvents:
         ]
 
     @staticmethod
-    def generate_risk_assessment(count: object) -> List[dict]:
-        """Gera avaliações de risco como dicionários.
+    def generate_risk_assessment(count: int) -> List[Dict[str, Any]]:
+        """Generates risk assessment data as dictionaries.
 
-        Cria um dicionário de avaliações de risco, com informações como ID, ID do usuário, nível de risco, detalhes e data.
+        This method generates a list of dictionaries, where each dictionary represents
+        a risk assessment with attributes like assessment ID, user ID, risk level,
+        details, assessment date, and creation timestamp. The data is generated using
+        the Faker library and includes realistic attributes.
         """
         return [
             {

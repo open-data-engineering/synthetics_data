@@ -1,7 +1,7 @@
 import random
 from uuid import uuid4
-from faker import Faker  # type: ignore
-from typing import List
+from faker import Faker
+from typing import Any, Dict, List
 
 fake = Faker("pt_BR")
 
@@ -9,8 +9,11 @@ fake = Faker("pt_BR")
 class AccountEvents:
 
     @staticmethod
-    def generate_accounts(count: int) -> List[dict]:
-        """Gera contas como dicionários."""
+    def generate_accounts(count: int) -> List[Dict[str, Any]]:
+        """Generates a list of account dictionaries.
+
+        Each dictionary represents an account with details like ID, user ID, balance, currency, creation date, type, and status.
+        """
         return [
             {
                 "account_id": str(uuid4()),
@@ -25,8 +28,11 @@ class AccountEvents:
         ]
 
     @staticmethod
-    def generate_subaccounts(count: int) -> List[dict]:
-        """Gera subcontas como dicionários."""
+    def generate_subaccounts(count: int) -> List[Dict[str, Any]]:
+        """Generates a list of subaccount dictionaries.
+
+        Each dictionary represents a subaccount with details like ID, parent account ID, balance, creation date, and purpose.
+        """
         return [
             {
                 "subaccount_id": str(uuid4()),
@@ -39,11 +45,10 @@ class AccountEvents:
         ]
 
     @staticmethod
-    def generate_users(count: int) -> List[dict]:
-        """Gera usuários como dicionários.
+    def generate_users(count: int) -> List[Dict[str, Any]]:
+        """Generates a list of user dictionaries.
 
-        Cria uma lista de dicionários, onde cada dicionário representa
-        um usuário com detalhes como ID, nome, e-mail, telefone e data de criação.
+        Each dictionary represents a user with details like ID, name, email, phone, and creation date.
         """
         return [
             {

@@ -1,14 +1,24 @@
 import logging
-from src.models.credit import CreditScore, RiskAssessment
-from src.commons.credit import CreditsEvents
+from typing import Any, Dict, List
+from commons.credit import CreditsEvents
 
 logger = logging.getLogger(__name__)
 
 
 class CreditService:
+    """Provides services for managing credit data.
+
+    This class offers methods for inserting credit scores and risk assessments,
+    handling potential errors during data generation.
+    """
+
     @staticmethod
-    def insert_credit_scores(count: int):
-        """Insere pontuações de crédito no banco de dados."""
+    def insert_credit_scores(count: int) -> List[Dict[str, Any]]:
+        """Inserts credit score data.
+
+        Generates and returns a list of credit score data dictionaries. Logs an error
+        and returns an empty list if data generation fails.
+        """
         try:
             return CreditsEvents.generate_credit_scores(count)
         except Exception as e:
@@ -16,8 +26,12 @@ class CreditService:
             return []
 
     @staticmethod
-    def insert_risk_assessments(count: int):
-        """Insere avaliações de risco no banco de dados."""
+    def insert_risk_assessments(count: int) -> List[Dict[str, Any]]:
+        """Inserts risk assessment data.
+
+        Generates and returns a list of risk assessment data dictionaries. Logs an
+        error and returns an empty list if data generation fails.
+        """
         try:
             return CreditsEvents.generate_risk_assessments(count)
         except Exception as e:

@@ -12,16 +12,23 @@ activate-env:
 install-reqs:
 	@echo "Installing requirements..."
 	@pip3 install -r requirements.txt
+	@pip3 install -r requirements-dev.txt
 
 .PHONY: tests
 tests:
 	@echo "Running tests..."
-	@python3 -m pytest tests
+	@PYTHONPATH=. pytest tests -v
+
+.PHONY: lint
+lint:
+	@echo "Running linter..."
+	@mypy src/ --config-file mypy.ini
 
 .PHONY: help
 help:
-	@echo "create-env:         --> Create virtual environment"
-	@echo "activate-env:       --> Activate virtual environment"
+	@echo "create-env:    --> Create virtual environment"
+	@echo "activate-env:  --> Activate virtual environment"
 	@echo "install-reqs:  --> Install requirements"
-	@echo "test:          --> Run tests"
+	@echo "tests:         --> Run tests"
+	@echo "lint:          --> Run linter"
 	@echo "help:          --> Show this help message"

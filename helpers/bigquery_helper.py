@@ -4,6 +4,11 @@ from typing import List, Dict
 
 
 class BigQueryHelper:
+    """Helper class for interacting with BigQuery.
+
+    This class provides methods for creating tables and inserting data into BigQuery.
+    """
+
     def __init__(self, project_id: str, dataset_id: str, table_id: str):
         """Inicializa o cliente do BigQuery."""
         self.client = bigquery.Client(project=project_id)
@@ -12,7 +17,11 @@ class BigQueryHelper:
         self.table_ref = f"{project_id}.{dataset_id}.{table_id}"
 
     def create_table_if_not_exists(self, schema: List[Dict[str, str]]):
-        """Cria a tabela no BigQuery se ela não existir."""
+        """Creates a BigQuery table if it doesn't exist.
+
+        This method checks if a table with the specified ID exists in the dataset.
+        If not, it creates a new table with the provided schema.
+        """
         dataset_ref = self.client.dataset(self.dataset_id)
         table_ref = dataset_ref.table(self.table_id)
 
@@ -29,7 +38,11 @@ class BigQueryHelper:
             print(f"✅ Tabela {self.table_ref} criada com sucesso!")
 
     def write_data(self, records: List):
-        """Insere dados na tabela do BigQuery, garantindo que objetos sejam convertidos corretamente."""
+        """Writes data to the BigQuery table.
+
+        This method inserts the provided records into the BigQuery table, handling
+        datetime objects conversion to ISO format.
+        """
         if not records:
             print("⚠️ Nenhum dado para inserir.")
             return
