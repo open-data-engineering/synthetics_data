@@ -1,4 +1,5 @@
 import logging
+from typing import Any, Dict, List
 from commons.credit import CreditsEvents
 
 logger = logging.getLogger(__name__)
@@ -12,7 +13,7 @@ class CreditService:
     """
 
     @staticmethod
-    def insert_credit_scores(count: int) -> list:
+    def insert_credit_scores(count: int) -> List[Dict[str, Any]]:
         """Inserts credit score data.
 
         Generates and returns a list of credit score data dictionaries. Logs an error
@@ -25,7 +26,7 @@ class CreditService:
             return []
 
     @staticmethod
-    def insert_risk_assessments(count: int) -> list:
+    def insert_risk_assessments(count: int) -> List[Dict[str, Any]]:
         """Inserts risk assessment data.
 
         Generates and returns a list of risk assessment data dictionaries. Logs an

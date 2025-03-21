@@ -1,7 +1,7 @@
 import random
 from uuid import uuid4
-from faker import Faker  # type: ignore
-from typing import List
+from faker import Faker
+from typing import Any, Dict, List
 
 fake = Faker("pt_BR")
 
@@ -13,7 +13,7 @@ class CompliancesEvents:
     """
 
     @staticmethod
-    def generate_regulations(count: int) -> List[dict]:
+    def generate_regulations(count: int) -> List[Dict[str, Any]]:
         """Generates a list of regulation dictionaries.
 
         Each dictionary represents a regulation with details like ID, name, description, jurisdiction, and timestamps.
@@ -31,7 +31,7 @@ class CompliancesEvents:
         ]
 
     @staticmethod
-    def generate_user_verifications(count: int) -> List[dict]:
+    def generate_user_verifications(count: int) -> List[Dict[str, Any]]:
         """Generates a list of user verification dictionaries.
 
         Each dictionary represents a user verification with details like ID, user ID, type, status, and timestamps.

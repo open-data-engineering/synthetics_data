@@ -1,4 +1,5 @@
 import logging
+from typing import Any, Dict, List
 from commons.audits import AuditsEvents
 
 logger = logging.getLogger(__name__)
@@ -12,7 +13,7 @@ class AuditService:
     """
 
     @staticmethod
-    def insert_audits(count: int) -> list:
+    def insert_audits(count: int) -> List[Dict[str, Any]]:
         """Inserts audit records.
 
         Generates and returns a list of audit data dictionaries. Logs an error and

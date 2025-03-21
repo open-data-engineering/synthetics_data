@@ -1,7 +1,7 @@
-import numpy as np  # type: ignore
+import numpy as np
 from uuid import uuid4
-from faker import Faker  # type: ignore
-from typing import List
+from faker import Faker
+from typing import Any, Dict, List
 
 
 fake = Faker("pt_BR")
@@ -16,7 +16,7 @@ class InvestmentsEvents:
     """
 
     @staticmethod
-    def generate_portfolios(count: int) -> List[dict]:
+    def generate_portfolios(count: int) -> List[Dict[str, Any]]:
         """Generates investment portfolios as dictionaries.
 
         This method generates a list of dictionaries, where each dictionary represents
@@ -38,7 +38,7 @@ class InvestmentsEvents:
         ]
 
     @staticmethod
-    def generate_transaction(count: int) -> List[dict]:
+    def generate_transaction(count: int) -> List[Dict[str, Any]]:
         """Generates investment transactions as dictionaries.
 
         This method generates a list of dictionaries, where each dictionary represents
@@ -60,7 +60,7 @@ class InvestmentsEvents:
         ]
 
     @staticmethod
-    def generate_portfolio(count: int) -> List[dict]:
+    def generate_portfolio(count: int) -> List[Dict[str, Any]]:
         """Generates investment portfolios as dictionaries.
 
         This method generates a list of dictionaries, where each dictionary represents

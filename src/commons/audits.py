@@ -1,7 +1,7 @@
-import numpy as np  # type: ignore
+import numpy as np
 from uuid import uuid4
-from faker import Faker  # type: ignore
-from typing import List
+from faker import Faker
+from typing import Any, Dict, List
 
 fake = Faker("pt_BR")
 
@@ -13,7 +13,7 @@ class AuditsEvents:
     """
 
     @staticmethod
-    def generate_audits(count: int) -> List[dict]:
+    def generate_audits(count: int) -> List[Dict[str, Any]]:
         """Generates a list of audit dictionaries.
 
         Each dictionary represents an audit with details like ID, entity ID, status, findings, and timestamps.

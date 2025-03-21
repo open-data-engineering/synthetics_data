@@ -1,7 +1,7 @@
 import random
 from uuid import uuid4
-from faker import Faker  # type: ignore
-from typing import List
+from faker import Faker
+from typing import Any, Dict, List
 
 fake = Faker("pt_BR")
 
@@ -9,7 +9,7 @@ fake = Faker("pt_BR")
 class AccountEvents:
 
     @staticmethod
-    def generate_accounts(count: int) -> List[dict]:
+    def generate_accounts(count: int) -> List[Dict[str, Any]]:
         """Generates a list of account dictionaries.
 
         Each dictionary represents an account with details like ID, user ID, balance, currency, creation date, type, and status.
@@ -28,7 +28,7 @@ class AccountEvents:
         ]
 
     @staticmethod
-    def generate_subaccounts(count: int) -> List[dict]:
+    def generate_subaccounts(count: int) -> List[Dict[str, Any]]:
         """Generates a list of subaccount dictionaries.
 
         Each dictionary represents a subaccount with details like ID, parent account ID, balance, creation date, and purpose.
@@ -45,7 +45,7 @@ class AccountEvents:
         ]
 
     @staticmethod
-    def generate_users(count: int) -> List[dict]:
+    def generate_users(count: int) -> List[Dict[str, Any]]:
         """Generates a list of user dictionaries.
 
         Each dictionary represents a user with details like ID, name, email, phone, and creation date.

@@ -1,4 +1,5 @@
 import logging
+from typing import Any, Dict, List
 from commons.lending import LendingEvents
 
 logger = logging.getLogger(__name__)
@@ -12,7 +13,7 @@ class LoanService:
     """
 
     @staticmethod
-    def insert_loans(count: int) -> list:
+    def insert_loans(count: int) -> List[Dict[str, Any]]:
         """Inserts loan data.
 
         Generates and returns a list of loan data dictionaries. Logs an error and
@@ -25,7 +26,7 @@ class LoanService:
             return []
 
     @staticmethod
-    def insert_payments(count: int) -> list:
+    def insert_payments(count: int) -> List[Dict[str, Any]]:
         """Inserts payment data.
 
         Generates and returns a list of payment data dictionaries. Logs an error and

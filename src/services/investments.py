@@ -1,4 +1,5 @@
 import logging
+from typing import Any, Dict, List
 from commons.investments import InvestmentsEvents
 
 logger = logging.getLogger(__name__)
@@ -12,7 +13,7 @@ class PortfolioService:
     """
 
     @staticmethod
-    def insert_portfolios(count: int) -> list:
+    def insert_portfolios(count: int) -> List[Dict[str, Any]]:
         """Inserts portfolio data.
 
         Generates and returns a list of investment portfolio data dictionaries.

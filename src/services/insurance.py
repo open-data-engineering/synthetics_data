@@ -1,4 +1,5 @@
 import logging
+from typing import Any, Dict, List
 from commons.insurance import InsuranceEvents
 
 logger = logging.getLogger(__name__)
@@ -12,7 +13,7 @@ class InsuranceService:
     """
 
     @staticmethod
-    def insert_policies(count: int) -> list:
+    def insert_policies(count: int) -> List[Dict[str, Any]]:
         """Inserts insurance policy data.
 
         Generates and returns a list of insurance policy data dictionaries. Logs an
@@ -25,7 +26,7 @@ class InsuranceService:
             return []
 
     @staticmethod
-    def insert_claims(count: int) -> list:
+    def insert_claims(count: int) -> List[Dict[str, Any]]:
         """Inserts insurance claim data.
 
         Generates and returns a list of insurance claim data dictionaries. Logs an error
@@ -38,7 +39,7 @@ class InsuranceService:
             return []
 
     @staticmethod
-    def insert_insured_entities(count: int) -> list:
+    def insert_insured_entities(count: int) -> List[Dict[str, Any]]:
         """Inserts insured entity data.
 
         Generates and returns a list of insured entity data dictionaries. Logs an error

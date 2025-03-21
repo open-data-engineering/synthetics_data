@@ -1,4 +1,5 @@
 import logging
+from typing import Any, Dict, List
 from commons.accounts import AccountEvents
 
 logger = logging.getLogger(__name__)
@@ -12,7 +13,7 @@ class AccountService:
     """
 
     @staticmethod
-    def insert_users(count: int) -> list:
+    def insert_users(count: int) -> List[Dict[str, Any]]:
         """Inserts user data.
 
         Inserts and returns a list of user data dictionaries. Logs an error and
@@ -25,7 +26,7 @@ class AccountService:
             return []
 
     @staticmethod
-    def insert_accounts(count: int) -> list:
+    def insert_accounts(count: int) -> List[Dict[str, Any]]:
         """Inserts account data.
 
         Inserts and returns a list of account data dictionaries. Logs an error and
@@ -38,7 +39,7 @@ class AccountService:
             return []
 
     @staticmethod
-    def insert_subaccounts(count: int) -> list:
+    def insert_subaccounts(count: int) -> List[Dict[str, Any]]:
         """Inserts subaccount data.
 
         Inserts and returns a list of subaccount data dictionaries. Logs an error

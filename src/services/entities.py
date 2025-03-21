@@ -1,4 +1,5 @@
 import logging
+from typing import Any, Dict, List
 from commons.entities import EntityEvents
 
 logger = logging.getLogger(__name__)
@@ -12,7 +13,7 @@ class EntityService:
     """
 
     @staticmethod
-    def insert_entities(count: int) -> list:
+    def insert_entities(count: int) -> List[Dict[str, Any]]:
         """Inserts entity data.
 
         Generates and returns a list of entity data dictionaries. Logs an error and

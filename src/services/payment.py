@@ -1,4 +1,5 @@
 import logging
+from typing import Any, Dict, List
 from commons.payments import PaymentsEvents
 
 logger = logging.getLogger(__name__)
@@ -12,7 +13,7 @@ class TransactionService:
     """
 
     @staticmethod
-    def insert_transactions(count: int) -> list:
+    def insert_transactions(count: int) -> List[Dict[str, Any]]:
         """Inserts transaction data.
 
         Generates and returns a list of transaction data dictionaries. Logs an error
@@ -25,7 +26,7 @@ class TransactionService:
             return []
 
     @staticmethod
-    def insert_payment_methods(count: int) -> list:
+    def insert_payment_methods(count: int) -> List[Dict[str, Any]]:
         """Inserts payment method data.
 
         Generates and returns a list of payment method data dictionaries. Logs an error
@@ -38,7 +39,7 @@ class TransactionService:
             return []
 
     @staticmethod
-    def insert_merchants(count: int) -> list:
+    def insert_merchants(count: int) -> List[Dict[str, Any]]:
         """Inserts merchant data.
 
         Generates and returns a list of merchant data dictionaries. Logs an error and

@@ -1,4 +1,5 @@
 import logging
+from typing import Any, Dict, List
 from commons.compliance import CompliancesEvents
 
 logger = logging.getLogger(__name__)
@@ -12,7 +13,7 @@ class ComplianceService:
     """
 
     @staticmethod
-    def insert_regulations(count: int) -> list:
+    def insert_regulations(count: int) -> List[Dict[str, Any]]:
         """Inserts regulation data.
 
         Generates and returns a list of regulation data dictionaries. Logs an error and
@@ -25,7 +26,7 @@ class ComplianceService:
             return []
 
     @staticmethod
-    def insert_user_verification(count: int) -> list:
+    def insert_user_verification(count: int) -> List[Dict[str, Any]]:
         """Inserts user verification data.
 
         Generates and returns a list of user verification data dictionaries. Logs an

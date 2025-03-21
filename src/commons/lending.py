@@ -1,7 +1,7 @@
-import numpy as np  # type: ignore
+import numpy as np
 from uuid import uuid4
-from faker import Faker  # type: ignore
-from typing import List
+from faker import Faker
+from typing import Any, Dict, List
 
 
 fake = Faker("pt_BR")
@@ -16,7 +16,7 @@ class LendingEvents:
     """
 
     @staticmethod
-    def generate_loans(count: int) -> List[dict]:
+    def generate_loans(count: int) -> List[Dict[str, Any]]:
         """Generates loan data as dictionaries.
 
         This method generates a list of dictionaries, where each dictionary represents
@@ -37,7 +37,7 @@ class LendingEvents:
         ]
 
     @staticmethod
-    def generate_payments(count: int) -> List[dict]:
+    def generate_payments(count: int) -> List[Dict[str, Any]]:
         """Generates loan payment data as dictionaries.
 
         This method generates a list of dictionaries, where each dictionary represents
@@ -58,7 +58,7 @@ class LendingEvents:
         ]
 
     @staticmethod
-    def generate_credit_score(count: int) -> List[dict]:
+    def generate_credit_score(count: int) -> List[Dict[str, Any]]:
         """Generates credit score data as dictionaries.
 
         This method generates a list of dictionaries, where each dictionary represents
@@ -78,7 +78,7 @@ class LendingEvents:
         ]
 
     @staticmethod
-    def generate_risk_assessment(count: int) -> List[dict]:
+    def generate_risk_assessment(count: int) -> List[Dict[str, Any]]:
         """Generates risk assessment data as dictionaries.
 
         This method generates a list of dictionaries, where each dictionary represents

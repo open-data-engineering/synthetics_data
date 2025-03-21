@@ -1,4 +1,4 @@
-from pydantic import BaseModel, StrictStr  # type: ignore
+from pydantic import BaseModel, StrictStr
 from datetime import datetime
 
 
