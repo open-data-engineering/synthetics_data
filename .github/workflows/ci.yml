@@ -15,6 +15,9 @@ jobs:
       matrix:
         python-version: ["3.9", "3.10", "3.11", "3.12"]
 
+    env:
+      PYTHONPATH: src
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,8 +37,6 @@ jobs:
       - name: Run tests with pytest
         run: |
           pytest --tb=short --disable-warnings
-        env:
-          PYTHONPATH: src
 
       - name: Check security vulnerabilities
         run: |
