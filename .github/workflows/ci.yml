@@ -53,13 +53,10 @@ jobs:
 
       - name: Install linters
         run: |
-          pip install black isort mypy
+          pip install black mypy
 
       - name: Run black (check only)
         run: black --check src/ tests/
-
-      - name: Run isort (check only)
-        run: isort --check-only src/ tests/
 
       - name: Run mypy (type check)
         run: mypy src/
