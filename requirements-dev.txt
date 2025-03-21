@@ -4,3 +4,4 @@ pydantic[email]
 pytest
 pytest-cov
 pytest-mock
+google-cloud-bigquery
